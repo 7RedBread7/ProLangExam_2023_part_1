@@ -1,0 +1,13 @@
+﻿@model University.Controllers.MyViewModel
+
+<h2>Information About Teachers</h2>
+<ul>
+	<p>@Model.teacher.FirstName @Model.teacher.LastName @Model.teacher.Age</p>
+	@foreach (var skill in Model.skills)
+	{
+		<li>
+			@skill.Name
+		    @skill.TeacherId
+		</li>
+	}
+</ul>

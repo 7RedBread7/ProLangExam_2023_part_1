@@ -1,0 +1,13 @@
+﻿@model List<University.DataAccess.Teacher>
+
+<h2>Information About Teachers</h2>
+<ul>
+	@foreach (var teacher in Model)
+	{
+		<li>
+			@teacher.FirstName
+		    @teacher.LastName
+		    @teacher.Age
+		</li>
+	}
+</ul>

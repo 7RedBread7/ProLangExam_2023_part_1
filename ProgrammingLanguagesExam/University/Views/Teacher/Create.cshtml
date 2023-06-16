@@ -1,0 +1,21 @@
+﻿@model University.Controllers.TeacherCreate
+
+<form asp-controller="Teacher" asp-action="Create" method="post">
+	<div>
+		<label for="FirstName">First Name</label>
+		<input type="text" id="FirstName" name="FirstName">
+	</div>
+	<div>
+		<label for="LastName">Last Name</label>
+		<input type="text" id="LastName" name="LastName">
+	</div>
+	<div>
+		<label for="Age">Age</label>
+		<input type="number" id="Age" name="Age">
+	</div>
+	<div>
+		<label for="Skills">Skills</label>
+		<input type="text" id="Skills" name="Skills">
+	</div>
+	<button type="submit">Submit</button>
+</form>

@@ -3,6 +3,7 @@ using System;
 using University.DataAccess;
 
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<UniversityDbContext>(options => options.UseInMemoryDatabase("UniversityDatabase"));
 // builder.Services.AddSingleton<UniversityDbContext>();
 
@@ -10,7 +11,14 @@ builder.Services.AddControllers();
 
 var app = builder.Build();
 AddSeedData(app);
-app.MapControllers();
+
+app.UseExceptionHandler("/Home/Error");
+app.UseStatusCodePagesWithReExecute("/Home/Error/{0}");
+
+
+app.MapControllerRoute(
+	name: "default",
+	pattern: "{controller=Home}/{action=Index}/{id?}");
 
 app.Run();
 
